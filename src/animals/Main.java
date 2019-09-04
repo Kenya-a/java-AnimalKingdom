@@ -30,6 +30,19 @@ public class Main
         myList.add(new Mammals("Raccoon", 1778));
         myList.add(new Mammals("BigFood", 1778));
 
+        //Fish
+        myList.add(new Fish("Salmon", 1778));
+        myList.add(new Fish("Catfish", 1778));
+        myList.add(new Fish("Perch", 1778));
+
+        //Birds
+
+        myList.add(new Birds("Pigeon", 1778));
+        myList.add(new Birds("Peacock", 1778));
+        myList.add(new Birds("Toucan", 1778));
+        myList.add(new Birds("Parrot", 1778));
+        myList.add(new Birds("Swan", 1778));
+        
         
 
 
