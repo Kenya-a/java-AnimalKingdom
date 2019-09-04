@@ -47,11 +47,8 @@ public class Main
         //1.List all the animals in descending order by year named
         System.out.println("*** Sorting in Descending Order of Discovery Year ***");
         myList.sort((a1, a2) -> a1.getDiscovery() - a2.getDiscovery());
-        myList.forEach(animal -> System.out.println(animal.getName() + ":" + animal.getDiscovery()));
-
+        myList.forEach(animal -> System.out.println(animal.getName() + " : " + animal.getDiscovery()));
         System.out.println();
-
-
 
         //2. List all the animals alphabetically.
         System.out.println("*** Sorting in Alphabetical Order ***");
@@ -61,23 +58,30 @@ public class Main
 
 
         //3.List all the animals order by how they move
-        System.out.println();
+        System.out.println("*** Sorting By Movement ***");
+        myList.sort((a1, a2) -> a1.move().compareToIgnoreCase(a2.move()));
+        myList.forEach(animal -> System.out.println(animal.getName() + " : " + animal.move()));
         System.out.println();
 
         //4.List only those animals the breath with lungs
-        System.out.println();
+        System.out.println("*** Animals that breathe with lungs ***");
+        printAnimals(myList, a -> a.breath() == "lungs");
         System.out.println();
 
         //5.List only those animals that breath with lungs and were named in 1758
-        System.out.println();
+        System.out.println("*** Animals that breathe with lungs and names in 1758 ***");
+        printAnimals(myList, a -> a.breath().equals("lungs") && a.getDiscovery()== 1758);
         System.out.println();
 
         //6.List only those animals that lay eggs and breath with lung
-        System.out.println();
+        System.out.println("*** Animals that breathe and lay eggs ***");
+        printAnimals(myList, a -> a.breath().equals("lungs") && a.reproduce().equals("eggs"));
         System.out.println();
 
         //7.List alphabetically only those animals that were named in 1758
-        System.out.println();
+        System.out.println("*** Animals named in 1758 in alphabetical order ***");
+        myList.sort((a1, a2)-> a1.getName().compareToIgnoreCase(a2.getName()));
+        printAnimals(myList, a -> a.getDiscovery()==1758);
         System.out.println();
 
 
