@@ -33,11 +33,11 @@ public class Main
         
 
 
-
+        //1. List all the animals alphabetically.
         System.out.println("*** Sorting in Alphabetical Order ***");
-        myList.sort((a1, a2) -> a1.getDiscovery() - a2.getDiscovery());
-        System.out.println(myList);
-
+        myList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+        myList.forEach(animal -> System.out.println(animal.getName()));
+      
 
 
 
